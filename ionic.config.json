@@ -1,0 +1,7 @@
+{
+  "name": "HelfLife",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
