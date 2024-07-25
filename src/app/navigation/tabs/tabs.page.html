@@ -1,0 +1,23 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="clipboard" (click)="navigatePage('clipBoard')">
+      <ion-icon aria-hidden="true" name="clipboard"></ion-icon>
+      <ion-label>Clipboard</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="home" (click)="navigatePage('home')">
+      <ion-icon aria-hidden="true" name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="camera" (click)="navigatePage('camera')">
+      <ion-icon aria-hidden="true" name="camera"></ion-icon>
+      <ion-label>Camera</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile" (click)="navigatePage('profile')">
+      <ion-icon aria-hidden="true" name="person-circle"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
