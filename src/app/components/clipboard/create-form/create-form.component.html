@@ -1,0 +1,65 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Create</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-list>
+
+        <ion-item lines="none">
+          <ion-input labelPlacement="floating" counter maxlength="20" [(ngModel)]="title">
+            <div slot="label">Title <ion-text color="danger">(Required)</ion-text></div>
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-input labelPlacement="floating" counter maxlength="60" type="text" [(ngModel)]="description">
+            <div slot="label">Description</div>
+          </ion-input>
+        </ion-item>
+
+        @if(showItems){
+
+        <ion-item lines="none">
+          <ion-button color="danger" shape="round" size="small" (click)="toggleItems()" slot="start">
+            <ion-text slot="">Cancel</ion-text>
+          </ion-button>
+          <ion-button shape="round" size="default" (click)="newItem()" slot="end">
+            <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        @for(item of itens; track item.id){
+        <ion-item lines="none">
+          <ion-input labelPlacement="floating" counter maxlength="40" [value]="item.value" [(ngModel)]="item.value">
+            <div slot="label">Item <ion-text color="danger">(Required)</ion-text></div>
+          </ion-input>
+
+          <ion-button color="danger" shape="round" size="default" class="delete-button" (click)="deleteItem(item.id)">
+            <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-toggle justify="space-between" [checked]="item.checked" [(ngModel)]="item.checked">Status</ion-toggle>
+        </ion-item>
+
+        }
+
+        }
+      </ion-list>
+
+      <div class="save-button">
+
+        @if(itens.length > 0){
+        <ion-button color="primary" expand="block" (click)="createItem()">Save list</ion-button>
+        }@else {
+        <ion-button color="primary" expand="block" (click)="toggleItems()">Add item</ion-button>
+        }
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

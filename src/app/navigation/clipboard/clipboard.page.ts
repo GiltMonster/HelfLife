@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonFab, IonIcon, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from "ionicons";
-import { addCircle } from "ionicons/icons";
+import { addCircle, closeCircle } from "ionicons/icons";
 import { Router } from "@angular/router";
 
 @Component({
@@ -13,13 +13,16 @@ import { Router } from "@angular/router";
 })
 export class ClipboardPage {
 
+  showFab = true;
+
   constructor(
     private router: Router
   ) {
-    addIcons({ addCircle });
+    addIcons({ addCircle, closeCircle });
   }
 
   create() {
     this.router.navigate(['tabs/clipboard/create'])
+    this.showFab = false;
   }
 }

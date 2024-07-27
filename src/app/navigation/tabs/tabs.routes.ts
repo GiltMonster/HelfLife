@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { ClipboardPage } from '../clipboard/clipboard.page';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
             path: 'edit/:id',
             loadComponent: () =>
               import('../clipboard/edit/edit.page').then((m) => m.EditPage),
+          },
+          {
+            path: '',
+            component: ClipboardPage,
           }
         ]
       },
