@@ -21,6 +21,7 @@ export class TabsPage {
   }
 
   navigatePage(page: string) {
+
     switch (page) {
       case 'clipboard':
         this.router.navigate(['tabs/clipboard']);
@@ -36,6 +37,10 @@ export class TabsPage {
 
       case 'profile':
         this.router.navigate(['tabs/profile']);
+        break;
+
+      default:
+        this.router.navigate(['tabs/home']);
         break;
     }
   }
