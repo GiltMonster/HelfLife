@@ -1,0 +1,23 @@
+.cards-list-mobile {
+  .card {
+    text-wrap: pretty;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//informa o ionic que é uma lista lateral
+div[scrollX=true] {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.cards-list-web{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}

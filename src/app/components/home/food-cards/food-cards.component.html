@@ -1,0 +1,57 @@
+@if(isMobile){
+<ion-label>
+  <h1>{{titleCategory}}</h1>
+</ion-label>
+
+<div class="cards-list-mobile" scrollX="true">
+  @for(food of cards; track food){
+  <div class="card">
+    <ion-card>
+      <img alt="img is {{food.title}}" [src]="food.image" />
+      <ion-card-header>
+        <ion-card-title>{{food.title}}</ion-card-title>
+        <ion-card-subtitle>{{food.subtitle}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-button fill="clear">
+        @if(food.favorite){
+        <ion-icon name="heart"></ion-icon>
+        } @else {
+        <ion-icon name="heart-outline"></ion-icon>
+        }
+      </ion-button>
+    </ion-card>
+  </div>
+  }
+</div>
+
+}@else {
+
+<ion-label>
+  <h1  class="web-title">{{titleCategory}}</h1>
+</ion-label>
+
+<div class="cards-list-web web-container">
+
+  @for(food of cards; track food){
+
+  <ion-card class="card">
+    <img alt="img is {{food.title}}" [src]="food.image" />
+    <ion-card-header>
+      <ion-card-title>{{food.title}}</ion-card-title>
+      <ion-card-subtitle>{{food.subtitle}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-button fill="clear" shape="round">
+      @if(food.favorite){
+      <ion-icon slot="icon-only" name="heart"></ion-icon>
+      } @else {
+      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      }
+    </ion-button>
+  </ion-card>
+
+  }
+
+</div>
+}
