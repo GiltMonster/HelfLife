@@ -1,0 +1,45 @@
+<ion-content [fullscreen]="true">
+  @if(isMobile){
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  }@else {
+  <ion-menu contentId="main-content">
+    <ion-content>
+      <ion-list>
+        @for(route of listRoutes; track listRoutes.length){
+          <ion-item [href]="route" lines="full">
+            <ion-icon [name]="route" slot="start" color="primary"></ion-icon>
+            <ion-label>{{route}}</ion-label>
+          </ion-item>
+        }
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+  }
+
+  <div class="ion-padding">
+
+    <!-- <app-explore-container name="Home page"></app-explore-container> -->
+    <app-food-categories></app-food-categories>
+    <app-food-cards titleCategory="Popular" typeCard="mostPopular"></app-food-cards>
+    <app-food-cards titleCategory="Choice editor" typeCard="mostPopular"></app-food-cards>
+    <app-food-cards [titleCategory]="getMonth()" typeCard="mostPopular"></app-food-cards>
+    <app-food-cards titleCategory="For family" typeCard="mostPopular"></app-food-cards>
+
+  </div>
+
+</ion-content>

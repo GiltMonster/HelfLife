@@ -3,18 +3,14 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./navigation/tabs/tabs.routes').then((m) => m.routes),
+    loadChildren: () => import('./pages/tabs/tabs.routes').then((m) => m.routes),
   },
   {
-    path: 'user',
-    loadComponent: () => import('./navigation/user/user.page').then( m => m.UserPage)
+    path: 'home',
+    loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'create',
-    loadComponent: () => import('./navigation/clipboard/create/create.page').then( m => m.CreatePage)
-  },
-  {
-    path: 'edit',
-    loadComponent: () => import('./navigation/clipboard/edit/edit.page').then( m => m.EditPage)
-  },
+    path: 'clipboard',
+    loadComponent: () => import('./pages/clipboard/clipboard.page').then((m) => m.ClipboardPage)
+  }
 ];

@@ -37,12 +37,12 @@
 @import '@ionic/angular/css/palettes/dark.system.css';
 
 :root{
-  --ion-color-primary: #33bd33;
-  --ion-color-primary-rgb: 0, 102, 0;
+  --ion-color-primary: #ae00ff;
+	--ion-color-primary-rgb: 174,0,255;
   --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #005a00;
-  --ion-color-primary-tint: #1a751a;
+	--ion-color-primary-contrast-rgb: 255,255,255;
+	--ion-color-primary-shade: #9900e0;
+	--ion-color-primary-tint: #b61aff;
 }
 
 .web-container{
